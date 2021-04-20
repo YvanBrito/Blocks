@@ -22,6 +22,7 @@ async function createWindow() {
         .ELECTRON_NODE_INTEGRATION as unknown) as boolean,
     },
   });
+  win.maximize();
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode

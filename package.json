@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "web:serve": "vue-cli-service serve",
-    "web:build": "vue-cli-service build",
+    "web:serve": "NODE_ENV=development vue-cli-service serve",
+    "web:build": "NODE_ENV=production vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build": "NODE_ENV=production vue-cli-service electron:build",
-    "serve": "NODE_ENV=development vue-cli-service electron:serve",
+    "dev": "NODE_ENV=development vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
