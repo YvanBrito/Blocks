@@ -1,0 +1,27 @@
+.main {
+  display: grid;
+  grid-template-areas:
+    'leftSidebar leftSidebar middle middle rightSidebar rightSidebar'
+    'leftSidebar leftSidebar middle middle rightSidebar rightSidebar'
+    'bottom bottom bottom bottom bottom bottom';
+  width: 100%;
+  height: 70vh;
+
+  &>div {
+    overflow-y: auto;
+  }
+
+  .middle {
+    @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
+    grid-area: middle;
+    width: 100%;
+    border: 1px solid black;
+  }
+  
+  .bottom {
+    @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
+    grid-area: bottom;
+    border: 2px solid yellow;
+    height: 32vh;
+  }
+}

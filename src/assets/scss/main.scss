@@ -1,0 +1,17 @@
+// Inspired by https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4
+
+@import './utilities/variables';
+@import './utilities/functions';
+@import './utilities/mixins';
+
+@import './base/reset';
+@import './base/typography';
+
+@import './layout/grid';
+@import './layout/footer';
+@import './layout/sidebar';
+@import './layout/forms';
+
+@import './components/button';
+
+@import './pages/home';

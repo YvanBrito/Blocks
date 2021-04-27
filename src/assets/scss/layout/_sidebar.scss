@@ -1,0 +1,14 @@
+.sidebar {
+  @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
+  height: 67vh;
+
+  &.left {
+    grid-area: leftSidebar;
+    border: 1px solid red;
+  }
+
+  &.right {
+    grid-area: rightSidebar;
+    border: 1px solid blue;
+  }
+}
