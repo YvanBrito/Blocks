@@ -1,0 +1,8 @@
+.resize {
+  &-x {
+    cursor: ew-resize;
+    height: 100%;
+    width: 5px;
+    background-color: black;
+  }
+}

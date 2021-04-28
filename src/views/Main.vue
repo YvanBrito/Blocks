@@ -1,8 +1,8 @@
 <template>
   <div class="main">
-    <DimensionPropertiesPanel class="sidebar left" />
+    <DimensionPropertiesPanel />
     <DatagenEditor class="middle" />
-    <GeneratorPropertiesPanel class="sidebar right" />
+    <GeneratorPropertiesPanel />
     <SampleVisualization class="bottom" />
   </div>
 </template>

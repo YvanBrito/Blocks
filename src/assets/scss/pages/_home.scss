@@ -14,7 +14,7 @@
   .middle {
     @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
     grid-area: middle;
-    width: 100%;
+    float: left;
     border: 1px solid black;
   }
   
