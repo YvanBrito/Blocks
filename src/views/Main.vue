@@ -1,8 +1,10 @@
 <template>
   <div class="main">
-    <DimensionPropertiesPanel />
-    <DatagenEditor class="middle" />
-    <GeneratorPropertiesPanel />
+    <div class="top">
+      <DimensionPropertiesPanel />
+      <DatagenEditor class="middle" />
+      <GeneratorPropertiesPanel />
+    </div>
     <SampleVisualization class="bottom" />
   </div>
 </template>

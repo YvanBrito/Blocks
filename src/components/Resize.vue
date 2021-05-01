@@ -23,7 +23,7 @@ export default defineComponent({
   },
   methods: {
     mouseDownResize(e: MouseEvent) {
-      this.parentWidth = this.$parent?.$el.getBoundingClientRect().width;
+      this.parentWidth = +this.$parent?.$el.style.width.replace("px", "");
       this.sizeX = e.clientX;
       document.addEventListener("mousemove", this.mouseMoveResize);
       document.addEventListener("mouseup", this.mouseUpResize);
@@ -36,8 +36,10 @@ export default defineComponent({
       if (this.sizeX) {
         let diff = (this.sizeX - e.clientX) * (this.dir === "right" ? 1 : -1);
         const parent = this.$parent?.$el;
-        const width = Math.max(170, this.parentWidth - diff);
+        const width = Math.max(180, this.parentWidth - diff);
         parent.style.width = `${width}px`;
+
+        this.$emit("resizing");
       }
     },
   },
