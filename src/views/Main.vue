@@ -5,7 +5,7 @@
       <DatagenEditor class="middle" />
       <GeneratorPropertiesPanel />
     </div>
-    <SampleVisualization class="bottom" />
+    <SampleVisualization />
   </div>
 </template>
 

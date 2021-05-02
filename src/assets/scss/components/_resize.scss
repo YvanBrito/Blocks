@@ -4,4 +4,10 @@
     height: 100%;
     width: 5px;
   }
+
+  &-y {
+    cursor: ns-resize;
+    height: 5px;
+    width: 100%;
+  }
 }
