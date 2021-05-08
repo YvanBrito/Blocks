@@ -2,7 +2,7 @@
   <div class="main">
     <div class="top">
       <DimensionPropertiesPanel />
-      <DatagenEditor class="middle" />
+      <DatagenEditor />
       <GeneratorPropertiesPanel />
     </div>
     <SampleVisualization />
@@ -12,10 +12,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import GeneratorPropertiesPanel from "@/components/GeneratorPropertiesPanel.vue";
-import DimensionPropertiesPanel from "@/components/DimensionPropertiesPanel.vue";
-import DatagenEditor from "@/components/DatagenEditor.vue";
-import SampleVisualization from "@/components/SampleVisualization.vue";
+import GeneratorPropertiesPanel from "@/components/mainView/GeneratorPropertiesPanel.vue";
+import DimensionPropertiesPanel from "@/components/mainView/DimensionPropertiesPanel.vue";
+import DatagenEditor from "@/components/mainView/DatagenEditor.vue";
+import SampleVisualization from "@/components/mainView/SampleVisualization.vue";
 
 export default defineComponent({
   name: "Main",

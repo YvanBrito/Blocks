@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Resize from "./Resize.vue";
+import Resize from "../misc/Resize.vue";
 
 export default defineComponent({
   name: "SampleVisualization",

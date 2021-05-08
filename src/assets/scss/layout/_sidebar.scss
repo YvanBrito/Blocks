@@ -4,5 +4,19 @@
   justify-content: space-between;
   background-color: #f5f5f4;
   border: 1px solid #ddd;
-  width: 300px;
+
+  & .sidebarContent {
+    @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    & div:last-of-type {
+      margin-top: auto;
+    }
+
+    & .footer {
+      border-top: 1px solid black;
+    }
+  }
 }

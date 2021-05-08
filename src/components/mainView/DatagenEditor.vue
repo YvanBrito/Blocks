@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="middle">
     DatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditorDatagenEditor
   </div>
 </template>
