@@ -16,6 +16,8 @@
     .middle {
       @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
       overflow-x: auto;
+      width: 100%;
+      background-color: var(--bg-color);
     }
   }
 
@@ -23,4 +25,9 @@
     @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
     height: 30vh;
   }
+}
+
+.sidebarTitle {
+  font-size: 12px;
+  padding: 10px 10px 2px;
 }
