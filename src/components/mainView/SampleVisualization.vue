@@ -12,14 +12,18 @@ import Resize from "../misc/Resize.vue";
 export default defineComponent({
   name: "SampleVisualization",
   components: { Resize },
-  methods: {
-    resizingSidebar() {
+  setup() {
+    function resizingSidebar() {
       const heightBottom = document.querySelector(".bottom")?.clientHeight || 0;
       const topHeight = window.innerHeight - heightBottom;
       document
         .querySelector(".top")
         ?.setAttribute("style", `height:${topHeight - 6}px`);
-    },
+    }
+
+    return {
+      resizingSidebar,
+    };
   },
 });
 </script>

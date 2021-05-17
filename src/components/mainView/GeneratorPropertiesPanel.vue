@@ -62,23 +62,17 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Resize from "../misc/Resize.vue";
+
+import Resize from "@/components/misc/Resize.vue";
+import helpers from "@/utils/helpers";
 
 export default defineComponent({
   name: "GeneratorPropertiesPanel",
   components: { Resize },
-  methods: {
-    resizingSidebar() {
-      const widthSidebarLeft =
-        document.querySelector(".sidebar.left")?.clientWidth || 0;
-      const widthSidebarRight =
-        document.querySelector(".sidebar.right")?.clientWidth || 0;
-      const middleWidth =
-        window.innerWidth - (widthSidebarLeft + widthSidebarRight);
-      document
-        .querySelector(".middle")
-        ?.setAttribute("style", `width:${middleWidth - 6}px`);
-    },
+  setup() {
+    return {
+      resizingSidebar: helpers.resizingSidebar,
+    };
   },
 });
 </script>

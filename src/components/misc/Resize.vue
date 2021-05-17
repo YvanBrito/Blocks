@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, getCurrentInstance } from "vue";
 
 export default defineComponent({
   name: "DimensionPropertiesPanel",
@@ -14,44 +14,51 @@ export default defineComponent({
       required: true,
     },
   },
-  data() {
+  setup(props, { emit }) {
+    const sizeY = ref(0);
+    const sizeX = ref(0);
+    const parentWidth = ref(0);
+    const parentHeight = ref(0);
+    const instance = getCurrentInstance();
+
+    function mouseDownResize(e: MouseEvent) {
+      parentWidth.value = instance?.parent?.vnode.el?.offsetWidth;
+      parentHeight.value = instance?.parent?.vnode.el?.offsetHeight;
+      sizeX.value =
+        props.dir === "right" || props.dir === "left" ? e.clientX : 0;
+      sizeY.value = props.dir === "up" || props.dir === "down" ? e.clientY : 0;
+      document.addEventListener("mousemove", mouseMoveResize);
+      document.addEventListener("mouseup", mouseUpResize);
+    }
+
+    function mouseUpResize() {
+      sizeX.value = 0;
+      sizeY.value = 0;
+      document.removeEventListener("mousemove", mouseMoveResize);
+    }
+
+    function mouseMoveResize(e: MouseEvent) {
+      sizeX.value ? horizontalResize(e) : verticalResize(e);
+      emit("resizing");
+    }
+
+    function horizontalResize(e: MouseEvent) {
+      let diff = (sizeX.value - e.clientX) * (props.dir === "right" ? 1 : -1);
+      const parent = instance?.parent?.vnode.el;
+      const width = Math.max(180, parentWidth.value - diff);
+      if (parent) parent.style.width = `${width}px`;
+    }
+
+    function verticalResize(e: MouseEvent) {
+      let diff = (sizeY.value - e.clientY) * (props.dir === "down" ? 1 : -1);
+      const parent = instance?.parent?.vnode.el;
+      const height = Math.max(100, parentHeight.value - diff);
+      if (parent) parent.style.height = `${height}px`;
+    }
+
     return {
-      sizeY: 0,
-      sizeX: 0,
-      parentWidth: 0,
-      parentHeight: 0,
+      mouseDownResize,
     };
-  },
-  methods: {
-    mouseDownResize(e: MouseEvent) {
-      this.parentWidth = this.$parent?.$el.offsetWidth;
-      this.parentHeight = this.$parent?.$el.offsetHeight;
-      this.sizeX = this.dir === "right" || this.dir === "left" ? e.clientX : 0;
-      this.sizeY = this.dir === "up" || this.dir === "down" ? e.clientY : 0;
-      document.addEventListener("mousemove", this.mouseMoveResize);
-      document.addEventListener("mouseup", this.mouseUpResize);
-    },
-    mouseUpResize() {
-      this.sizeX = 0;
-      this.sizeY = 0;
-      document.removeEventListener("mousemove", this.mouseMoveResize);
-    },
-    mouseMoveResize(e: MouseEvent) {
-      this.sizeX ? this.horizontalResize(e) : this.verticalResize(e);
-      this.$emit("resizing");
-    },
-    horizontalResize(e: MouseEvent) {
-      let diff = (this.sizeX - e.clientX) * (this.dir === "right" ? 1 : -1);
-      const parent = this.$parent?.$el;
-      const width = Math.max(180, this.parentWidth - diff);
-      parent.style.width = `${width}px`;
-    },
-    verticalResize(e: MouseEvent) {
-      let diff = (this.sizeY - e.clientY) * (this.dir === "down" ? 1 : -1);
-      const parent = this.$parent?.$el;
-      const height = Math.max(100, this.parentHeight - diff);
-      parent.style.height = `${height}px`;
-    },
   },
 });
 </script>

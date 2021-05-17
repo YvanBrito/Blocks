@@ -9,9 +9,8 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "DatagenEditor",
-  components: {},
-  methods: {
-    changeTheme() {
+  setup() {
+    function changeTheme() {
       const html = document.querySelector("html");
       if (html) {
         if (html.dataset.theme === "theme-dark")
@@ -19,6 +18,10 @@ export default defineComponent({
         else html.dataset.theme = "theme-dark";
       }
     }
-  }
+
+    return {
+      changeTheme,
+    };
+  },
 });
 </script>
