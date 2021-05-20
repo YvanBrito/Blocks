@@ -18,12 +18,14 @@
       overflow-x: auto;
       width: 100%;
       background-color: var(--bg-color);
+      border: 1px solid #ddd;
     }
   }
 
   .bottom {
     @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
     height: 30vh;
+    background-color: var(--bg-color);
   }
 }
 

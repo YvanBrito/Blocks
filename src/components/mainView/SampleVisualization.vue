@@ -16,7 +16,7 @@ export default {
       const topHeight = window.innerHeight - heightBottom;
       document
         .querySelector(".top")
-        ?.setAttribute("style", `height:${topHeight - 6}px`);
+        ?.setAttribute("style", `height:${topHeight}px`);
     },
   },
 };
