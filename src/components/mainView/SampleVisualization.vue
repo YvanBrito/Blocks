@@ -5,25 +5,19 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script>
 import Resize from "../misc/Resize.vue";
-
-export default defineComponent({
+export default {
   name: "SampleVisualization",
   components: { Resize },
-  setup() {
-    function resizingSidebar() {
+  methods: {
+    resizingSidebar() {
       const heightBottom = document.querySelector(".bottom")?.clientHeight || 0;
       const topHeight = window.innerHeight - heightBottom;
       document
         .querySelector(".top")
         ?.setAttribute("style", `height:${topHeight - 6}px`);
-    }
-
-    return {
-      resizingSidebar,
-    };
+    },
   },
-});
+};
 </script>

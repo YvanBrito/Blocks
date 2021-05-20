@@ -44,19 +44,23 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
+<script>
 import Resize from "@/components/misc/Resize.vue";
-import helpers from "@/utils/helpers";
-
-export default defineComponent({
+export default {
   name: "DimensionPropertiesPanel",
   components: { Resize },
-  setup() {
-    return {
-      resizingSidebar: helpers.resizingSidebar,
-    };
+  methods: {
+    resizingSidebar() {
+      const widthSidebarLeft =
+        document.querySelector(".sidebar.left")?.clientWidth || 0;
+      const widthSidebarRight =
+        document.querySelector(".sidebar.right")?.clientWidth || 0;
+      const middleWidth =
+        window.innerWidth - (widthSidebarLeft + widthSidebarRight);
+      document
+        .querySelector(".middle")
+        ?.setAttribute("style", `width:${middleWidth - 6}px`);
+    },
   },
-});
+};
 </script>
