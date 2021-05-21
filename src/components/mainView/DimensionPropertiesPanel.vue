@@ -49,6 +49,9 @@ import Resize from "@/components/misc/Resize.vue";
 export default {
   name: "DimensionPropertiesPanel",
   components: { Resize },
+  mounted() {
+    console.log(Resize);
+  },
   methods: {
     resizingSidebar() {
       const widthSidebarLeft =
