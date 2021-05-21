@@ -2,7 +2,7 @@
   <div class="sidebar right">
     <Resize dir="left" class="resize-x" @resizing="resizingSidebar" />
     <div class="sidebarContent">
-      <span class="sidebarTitle">Generator Properties</span>
+      <span class="sidebarTitle">{{ $t("generatorProperties") }}</span>
       <div class="infos">
         <table>
           <tr>
