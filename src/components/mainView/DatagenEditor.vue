@@ -1,6 +1,9 @@
 <template>
   <div class="middle">
-    <button @click.prevent="changeTheme()">Change Theme</button>
+    <button @click.prevent="changeTheme()">{{ $t("menu.changeTheme") }}</button>
+    <button @click.prevent="changeLocale()">
+      {{ $t("menu.changeLocale") }}
+    </button>
   </div>
 </template>
 
@@ -16,6 +19,9 @@ export default {
           html.dataset.theme = "theme-light";
         else html.dataset.theme = "theme-dark";
       }
+    },
+    changeLocale() {
+      this.$i18n.locale = this.$i18n.locale === "pt-br" ? "en-us" : "pt-br";
     },
   },
 };

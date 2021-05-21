@@ -1,12 +1,16 @@
 <template>
   <div class="sidebar left">
     <div class="sidebarContent">
-      <span class="sidebarTitle">Dimension Properties</span>
+      <span class="sidebarTitle">{{
+        $t("dimensionProperties.dimensionProperties")
+      }}</span>
       <div class="infos">
         <table>
           <tr>
             <td>
-              <label for="dimensionName">Name</label>
+              <label for="dimensionName">{{
+                $t("dimensionProperties.name")
+              }}</label>
             </td>
             <td>
               <input type="text" name="dimensionName" id="dimensionName" />
@@ -14,15 +18,15 @@
           </tr>
           <tr>
             <td>
-              <span>Type</span>
+              <span>{{ $t("dimensionProperties.type") }}</span>
             </td>
             <td>
-              <span>Numeric</span>
+              <span>{{ $t("dimensionProperties.numeric") }}</span>
             </td>
           </tr>
           <tr>
             <td>
-              <span>ID</span>
+              <span>{{ $t("dimensionProperties.id") }}</span>
             </td>
             <td>
               <span>ColumnId</span>
@@ -30,7 +34,9 @@
           </tr>
           <tr>
             <td>
-              <label for="display">Display</label>
+              <label for="display">{{
+                $t("dimensionProperties.display")
+              }}</label>
             </td>
             <td>
               <input type="checkbox" id="display" />

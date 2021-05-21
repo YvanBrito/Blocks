@@ -1,0 +1,28 @@
+{
+  "menu": {
+    "changeTheme": "Change Theme",
+    "changeLocale": "Change Locale"
+  },
+  "dimensionProperties": {
+    "dimensionProperties": "Dimension Properties",
+    "name": "Name",
+    "type": "Type",
+    "numeric": "Numeric",
+    "id": "ID",
+    "display": "Display"
+  },
+  "generatorProperties": {
+    "generatorProperties": "Generator Properties",
+    "type": "Type",
+    "gaussianGenerator": "Gaussian Generator",
+    "constantValue": "Constant Value",
+    "missingValue": "Missing Value",
+    "operator": "Operator",
+    "sum": "Sum",
+    "multiply": "Multiply",
+    "subtract": "Subtract",
+    "min": "Min",
+    "max": "Max",
+    "discrete": "Discrete"
+  }
+}

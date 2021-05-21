@@ -1,0 +1,28 @@
+{
+  "menu": {
+    "changeTheme": "Mudar Tema",
+    "changeLocale": "Mudar Idioma"
+  },
+  "dimensionProperties": {
+    "dimensionProperties": "Propriedades da Dimensão",
+    "name": "Nome",
+    "type": "Tipo",
+    "numeric": "Númerico",
+    "id": "ID",
+    "display": "Mostrar"
+  },
+  "generatorProperties": {
+    "generatorProperties": "Propriedades do Gerador",
+    "type": "Tipo",
+    "gaussianGenerator": "Gerador Gaussiano",
+    "constantValue": "Valor Constante",
+    "missingValue": "Valor Faltante",
+    "operator": "Operador",
+    "sum": "Soma",
+    "multiply": "Multiplicação",
+    "subtract": "Subtração",
+    "min": "Min",
+    "max": "Max",
+    "discrete": "Discreto"
+  }
+}

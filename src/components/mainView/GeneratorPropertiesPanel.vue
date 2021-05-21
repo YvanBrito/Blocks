@@ -2,36 +2,52 @@
   <div class="sidebar right">
     <Resize dir="left" class="resize-x" @resizing="resizingSidebar" />
     <div class="sidebarContent">
-      <span class="sidebarTitle">{{ $t("generatorProperties") }}</span>
+      <span class="sidebarTitle">{{
+        $t("generatorProperties.generatorProperties")
+      }}</span>
       <div class="infos">
         <table>
           <tr>
             <td>
-              <label for="generatorType">Type</label>
+              <label for="generatorType">{{
+                $t("generatorProperties.type")
+              }}</label>
             </td>
             <td>
               <select id="generatorType">
-                <option value="Gaussian Generator">Gaussian Generator</option>
-                <option value="Constant Value">Constant Value</option>
-                <option value="Missing Value">Missing Value</option>
+                <option value="gaussianGenerator">
+                  {{ $t("generatorProperties.gaussianGenerator") }}
+                </option>
+                <option value="constantValue">
+                  {{ $t("generatorProperties.constantValue") }}
+                </option>
+                <option value="missingValue">
+                  {{ $t("generatorProperties.missingValue") }}
+                </option>
               </select>
             </td>
           </tr>
           <tr>
             <td>
-              <label for="operator">Operator</label>
+              <label for="operator">{{
+                $t("generatorProperties.operator")
+              }}</label>
             </td>
             <td>
               <select id="operator">
-                <option value="sum">sum</option>
-                <option value="multiply">multiply</option>
-                <option value="subtract">subtract</option>
+                <option value="sum">{{ $t("generatorProperties.sum") }}</option>
+                <option value="multiply">
+                  {{ $t("generatorProperties.multiply") }}
+                </option>
+                <option value="subtract">
+                  {{ $t("generatorProperties.subtract") }}
+                </option>
               </select>
             </td>
           </tr>
           <tr>
             <td>
-              <label for="min">Min</label>
+              <label for="min">{{ $t("generatorProperties.min") }}</label>
             </td>
             <td>
               <input type="text" id="min" />
@@ -39,7 +55,7 @@
           </tr>
           <tr>
             <td>
-              <label for="max">Max</label>
+              <label for="max">{{ $t("generatorProperties.max") }}</label>
             </td>
             <td>
               <input type="text" id="max" />
@@ -47,7 +63,7 @@
           </tr>
           <tr>
             <td>
-              <label for="disc">Disc</label>
+              <label for="disc">{{ $t("generatorProperties.discrete") }}</label>
             </td>
             <td>
               <input type="checkbox" id="disc" />
