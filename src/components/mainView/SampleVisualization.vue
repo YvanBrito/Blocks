@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Resize from "../misc/Resize.vue";
+import Resize from "../misc/Resize";
 export default {
   name: "SampleVisualization",
   components: { Resize },

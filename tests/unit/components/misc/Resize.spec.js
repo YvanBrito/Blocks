@@ -1,4 +1,3 @@
-// import { shallowMount } from "@vue/test-utils";
 import Resize from "@/components/misc/Resize.vue";
 
 describe("Resize.vue", () => {

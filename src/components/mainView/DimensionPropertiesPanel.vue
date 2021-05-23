@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import Resize from "@/components/misc/Resize.vue";
+import Resize from "@/components/misc/Resize";
 export default {
   name: "DimensionPropertiesPanel",
   components: { Resize },

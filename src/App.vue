@@ -9,10 +9,21 @@
 </template>
 
 <script>
+import { ipcRenderer } from "electron";
+
 export default {
   created() {
     const html = document.querySelector("html");
     if (html) html.dataset.theme = `theme-light`;
+  },
+  mounted() {
+    ipcRenderer.on("change-theme", (event, arg) => {
+      const html = document.querySelector("html");
+      if (html) html.dataset.theme = `theme-${arg}`;
+    });
+    ipcRenderer.on("change-locale", (event, arg) => {
+      this.$i18n.locale = arg;
+    });
   },
 };
 </script>

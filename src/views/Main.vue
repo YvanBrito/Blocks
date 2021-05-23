@@ -2,7 +2,7 @@
   <div class="main">
     <div class="top">
       <DimensionPropertiesPanel />
-      <DatagenEditor />
+      <DataModelEditor />
       <GeneratorPropertiesPanel />
     </div>
     <SampleVisualization />
@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import GeneratorPropertiesPanel from "@/components/mainView/GeneratorPropertiesPanel.vue";
-import DimensionPropertiesPanel from "@/components/mainView/DimensionPropertiesPanel.vue";
-import DatagenEditor from "@/components/mainView/DatagenEditor.vue";
-import SampleVisualization from "@/components/mainView/SampleVisualization.vue";
+import GeneratorPropertiesPanel from "@/components/mainView/GeneratorPropertiesPanel";
+import DimensionPropertiesPanel from "@/components/mainView/DimensionPropertiesPanel";
+import DataModelEditor from "@/components/mainView/DataModelEditor";
+import SampleVisualization from "@/components/mainView/SampleVisualization";
 export default {
   name: "Main",
   components: {
     GeneratorPropertiesPanel,
     DimensionPropertiesPanel,
-    DatagenEditor,
+    DataModelEditor,
     SampleVisualization,
   },
 };
