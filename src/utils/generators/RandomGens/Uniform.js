@@ -1,7 +1,7 @@
 import Random from "../Random";
 import randgen from "randgen";
 
-export default class RandomUniformGenerator extends Random {
+export default class Uniform extends Random {
   constructor(min, max, disc) {
     super("Uniform Generator");
     this.min = min || 0;
@@ -48,7 +48,7 @@ export default class RandomUniformGenerator extends Random {
   }
 
   copy() {
-    let newGen = new RandomUniformGenerator(this.min, this.max, this.disc);
+    let newGen = new Uniform(this.min, this.max, this.disc);
     if (this.generator) {
       newGen.addGenerator(this.generator.copy(), this.order);
     }

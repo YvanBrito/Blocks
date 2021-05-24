@@ -1,6 +1,6 @@
 // import SwitchCaseFunction from "./SwitchCaseFunction";
 import RandomUniformGenerator from "./RandomGens/Uniform";
-import DataModel from "../DataModel";
+import Column from "../Column";
 import helpers from "../helpers";
 
 export default class Generator {
@@ -47,7 +47,7 @@ export default class Generator {
   sumOrder() {
     if (this.parent instanceof Generator) {
       this.order = this.parent.order + 1;
-    } else if (this.parent instanceof DataModel) {
+    } else if (this.parent instanceof Column) {
       this.order = 0;
     }
     if (this.type === "SwitchCaseFunction") {
@@ -66,7 +66,7 @@ export default class Generator {
         this.parent.generator = this.generator;
         this.generator.parent = this.parent;
       } else {
-        if (this.parent instanceof DataModel) {
+        if (this.parent instanceof Column) {
           let newGen = new RandomUniformGenerator();
           this.parent.generator = newGen;
           newGen.parent = this.parent;
@@ -74,7 +74,7 @@ export default class Generator {
           this.parent.generator = undefined;
         }
       }
-      if (this.parent instanceof DataModel) {
+      if (this.parent instanceof Column) {
         this.parent.generator.getRootGenerator().sumOrder();
       } else {
         this.parent.getRootGenerator().sumOrder();

@@ -1,24 +1,28 @@
 <template>
-  <div class="tab">
-    <button @click.prevent="removeDataModel()">Remove DataModel</button>
-    {{ dataID }}
-    <button @click.prevent="addDataModel()">Add DataModel</button>
+  <div @click.prevent="changeActiveDataModel(index)" class="tab">
+    {{ dataModel.ID }}
+    <button @click.prevent="removeDataModel(index)">Remove DataModel</button>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
+import { mapMutations } from "vuex";
+import DataModel from "@/utils/DataModel";
 
 export default {
   name: "Tab",
-  computed: {
-    ...mapGetters(["dataModels"]),
-    dataID() {
-      return this.dataModels.map((dm) => dm.ID);
+  props: {
+    dataModel: {
+      type: DataModel,
+      required: true,
+    },
+    index: {
+      type: Number,
+      required: true,
     },
   },
   methods: {
-    ...mapMutations(["addDataModel", "removeDataModel"]),
+    ...mapMutations(["removeDataModel", "changeActiveDataModel"]),
   },
 };
 </script>

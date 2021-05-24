@@ -1,6 +1,6 @@
-import { Generator } from "./Generator.js";
+import Generator from "./Generator.js";
 
-export default class Function extends Generator {
+export default class FunctionGenerator extends Generator {
   constructor(name, inputGenerator, inputGenIndex) {
     super(name);
     this.inputGenerator = inputGenerator;
