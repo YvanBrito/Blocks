@@ -18,8 +18,6 @@ const mutations = {
       index === state.dataModels.length - 1
     ) {
       state.activeDataModelIndex--;
-      console.log("Mudando aqui irmãozinho");
-      console.log(state.activeDataModelIndex);
     }
 
     if (index > -1) {

@@ -1,7 +1,10 @@
 <template>
   <div class="table">
     {{ columnsID }}
-    <button @click.prevent="addColumnAtDataModelIndex(activeDataModelIndex)">
+    <button
+      v-if="dataModels.length"
+      @click.prevent="addColumnAtDataModelIndex(activeDataModelIndex)"
+    >
       Add Column
     </button>
   </div>

@@ -1,0 +1,39 @@
+.tabs {
+  display: flex;
+
+  .tab {
+    display: flex;
+    padding: 5px 10px;
+    background-color: var(--sidebar-bg-color);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+
+    &:hover {
+      button {
+        visibility: visible;
+      }
+    }
+
+    &.active {
+      background-color: var(--bg-color);
+
+      button {
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
+    }
+
+    button {
+      margin-left: 10px;
+      height: 20px;
+      width: 20px;
+      background-color: var(--sidebar-bg-color);
+      border: none;
+      visibility: hidden;
+
+      &:hover {
+        background-color: var(--border);
+      }
+    }
+  }
+}
