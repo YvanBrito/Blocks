@@ -3,15 +3,17 @@ import seedrandom from "seedrandom";
 import Column from "./Column";
 import helpers from "./helpers";
 
-import RandomUniformGenerator from "./generators/RandomGens/Uniform";
-import PoissonTimeGenerator from "./generators/RandomGens/PoissonTime";
-import RandomGaussianGenerator from "./generators/RandomGens/Gaussian";
-import RandomPoissonGenerator from "./generators/RandomGens/Poisson";
-import RandomBernoulliGenerator from "./generators/RandomGens/Bernoulli";
-import RandomCauchyGenerator from "./generators/RandomGens/Cauchy";
-import RandomCategorical from "./generators/RandomGens/Categorical";
-import RandomCategoricalQtt from "./generators/RandomGens/CategoricalQuantity";
-import RandomWeightedCategorical from "./generators/RandomGens/WeightedCategorical";
+import {
+  Uniform,
+  PoissonTime,
+  Gaussian,
+  Poisson,
+  Bernoulli,
+  Cauchy,
+  Categorical,
+  CategoricalQuantity,
+  WeightedCategorical,
+} from "./generators/RandomGens";
 
 import Generator from "./generators/Generator";
 import FunctionGenerator from "./generators/Function";
@@ -103,7 +105,7 @@ export default class DataModel {
   }
 
   addColumn(name, generator) {
-    generator = generator || new RandomUniformGenerator();
+    generator = generator || new Uniform();
     let column = new Column(name, generator);
     this.columns.push(column);
   }
@@ -522,15 +524,15 @@ export default class DataModel {
   }
 
   static listOfGens = {
-    "Poisson Time Generator": PoissonTimeGenerator,
-    "Uniform Generator": RandomUniformGenerator,
-    "Gaussian Generator": RandomGaussianGenerator,
-    "Poisson Generator": RandomPoissonGenerator,
-    "Bernoulli Generator": RandomBernoulliGenerator,
-    "Cauchy Generator": RandomCauchyGenerator,
-    Categorical: RandomCategorical,
-    "Categorical Quantity": RandomCategoricalQtt,
-    "Weighted Categorical": RandomWeightedCategorical,
+    "Poisson Time Generator": PoissonTime,
+    "Uniform Generator": Uniform,
+    "Gaussian Generator": Gaussian,
+    "Poisson Generator": Poisson,
+    "Bernoulli Generator": Bernoulli,
+    "Cauchy Generator": Cauchy,
+    Categorical: Categorical,
+    "Categorical Quantity": CategoricalQuantity,
+    "Weighted Categorical": WeightedCategorical,
     // "Constant Value": ConstantValue,
     // "Missing Value": MCAR,
     // MCAR: MCAR,
@@ -544,7 +546,7 @@ export default class DataModel {
     // MinMax: MinMax,
     // NumberFormat: NumberFormat,
     // "Low-Pass Filter": LowPassFilter,
-    // "Weighted Categorical": RandomWeightedCategorical,
+    // "Weighted Categorical": WeightedCategorical,
     // "Linear Function": LinearFunction,
     // "Quadratic Function": QuadraticFunction,
     // "Polynomial Function": PolynomialFunction,
@@ -563,12 +565,12 @@ export default class DataModel {
   };
 
   static listOfGensHelp = {
-    "Poisson Time Generator": PoissonTimeGenerator,
+    "Poisson Time Generator": PoissonTime,
     "Uniform Generator": "Generate random data distributed evenly.",
-    "Gaussian Generator": RandomGaussianGenerator,
-    "Poisson Generator": RandomPoissonGenerator,
-    "Bernoulli Generator": RandomBernoulliGenerator,
-    "Cauchy Generator": RandomCauchyGenerator,
+    "Gaussian Generator": Gaussian,
+    "Poisson Generator": Poisson,
+    "Bernoulli Generator": Bernoulli,
+    "Cauchy Generator": Cauchy,
     Categorical: "Generate random data using names.",
     "Categorical Quantity":
       "Almost the same as Categorical, but each name have a fixed quantity.",
@@ -609,10 +611,10 @@ export default class DataModel {
 
   // static listOfGensForNoise = {
   //   "Uniform Generator": RandomGens.RandomUniformGenerator,
-  //   "Gaussian Generator": RandomGens.RandomGaussianGenerator,
-  //   "Poisson Generator": RandomGens.RandomPoissonGenerator,
-  //   "Bernoulli Generator": RandomGens.RandomBernoulliGenerator,
-  //   "Cauchy Generator": RandomGens.RandomCauchyGenerator,
+  //   "Gaussian Generator": RandomGens.Gaussian,
+  //   "Poisson Generator": RandomGens.Poisson,
+  //   "Bernoulli Generator": RandomGens.Bernoulli,
+  //   "Cauchy Generator": RandomGens.Cauchy,
   // };
 
   // static listOfGensComplete = {

@@ -21,8 +21,6 @@ export default {
       return this.dataModels[this.activeDataModelIndex];
     },
     columnsID() {
-      console.log(this.activeDataModelIndex);
-      console.log(this.dataModels);
       return this.activeDataModel?.columns.map((col) => col.ID);
     },
   },

@@ -9,31 +9,33 @@ const state = {
 const mutations = {
   addDataModel: (state) => {
     state.dataModels.push(new DataModel());
-    state.activeDataModelIndex++;
-    console.log(state.dataModels);
+    state.activeDataModelIndex = state.dataModels.length - 1;
   },
   removeDataModel: (state, index) => {
-    if (
-      index === state.activeDataModelIndex &&
-      index === state.dataModels.length - 1
-    ) {
-      state.activeDataModelIndex--;
-    }
-
-    if (index > -1) {
+    if (index > -1 && index < state.dataModels.length) {
       state.dataModels.splice(index, 1);
     }
-    console.log(state.dataModels);
   },
   addColumnAtDataModelIndex: (state, index) => {
     state.dataModels[index].columns.push(new Column());
-    console.log(state.dataModels);
   },
   changeActiveDataModel: (state, index) => {
     state.activeDataModelIndex = Math.min(
       Math.max(index, 0),
       state.dataModels.length
     );
+  },
+};
+
+const actions = {
+  closeDataModel: ({ commit, state }, index) => {
+    commit("removeDataModel", index);
+    if (
+      index === state.activeDataModelIndex ||
+      index < state.activeDataModelIndex
+    ) {
+      commit("changeActiveDataModel", --state.activeDataModelIndex);
+    }
   },
 };
 
@@ -49,5 +51,6 @@ const getters = {
 export default {
   state,
   mutations,
+  actions,
   getters,
 };

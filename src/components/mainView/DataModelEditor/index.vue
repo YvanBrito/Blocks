@@ -25,6 +25,9 @@ export default {
     Table,
     Tab,
   },
+  mounted() {
+    this.addDataModel();
+  },
   computed: {
     ...mapGetters(["dataModels"]),
     dataModelID() {

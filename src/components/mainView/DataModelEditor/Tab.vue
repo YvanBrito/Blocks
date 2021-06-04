@@ -1,18 +1,18 @@
 <template>
   <div
-    @click.prevent="changeActiveDataModel(index)"
+    @click.prevent="selectTab"
     class="tab"
     :class="{ active: index === activeDataModelIndex }"
   >
     {{ dataModel.name }}
-    <button @click.prevent="removeDataModel(index)">
+    <button @click.prevent="closeDataModel(index)">
       <font-awesome-icon icon="times" />
     </button>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 import DataModel from "@/utils/DataModel";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -35,7 +35,12 @@ export default {
     ...mapGetters(["activeDataModelIndex"]),
   },
   methods: {
-    ...mapMutations(["removeDataModel", "changeActiveDataModel"]),
+    ...mapMutations(["changeActiveDataModel"]),
+    ...mapActions(["closeDataModel"]),
+    selectTab(e) {
+      if (e.target.classList.contains("tab"))
+        this.changeActiveDataModel(this.index);
+    },
   },
 };
 </script>

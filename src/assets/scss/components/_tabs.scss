@@ -9,6 +9,7 @@
     border-right: 1px solid var(--border);
 
     &:hover {
+      cursor: default;
       button {
         visibility: visible;
       }
