@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vue-cli-service electron:build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service electron:serve",
+    "dev": "vue-cli-service lint && vue-cli-service electron:serve",
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
     "postinstall": "electron-builder install-app-deps && husky install",
     "postuninstall": "electron-builder install-app-deps",
