@@ -7,7 +7,7 @@
         :index="index"
         :key="index"
       />
-      <button @click.prevent="addDataModel()">+</button>
+      <button class="btn addModel" @click.prevent="addDataModel()" />
     </div>
     <Table />
   </div>

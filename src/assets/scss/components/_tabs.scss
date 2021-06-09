@@ -1,15 +1,27 @@
 .tabs {
+  @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
   display: flex;
+  overflow-x: auto;
+  margin-right: 15px;
 
   .tab {
+    position: relative;
     display: flex;
     padding: 5px 10px;
     background-color: var(--sidebar-bg-color);
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
+    padding-right: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 20px;
+      width: 1px;
+      background-color: var(--sidebar-bg-color);
+      right: -1px;
+    }
 
     &:hover {
-      cursor: default;
+      cursor: pointer;
       button {
         visibility: visible;
       }
@@ -30,10 +42,14 @@
       width: 20px;
       background-color: var(--sidebar-bg-color);
       border: none;
+      border-radius: 10px;
       visibility: hidden;
+      outline: none;
+      transition: 0.2s;
 
       &:hover {
-        background-color: var(--border);
+        cursor: pointer;
+        background-color: var(--btn-hover);
       }
     }
   }

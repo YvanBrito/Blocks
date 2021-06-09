@@ -10,6 +10,7 @@ $scrollbar-border-radius: 8px;
   --component-bg-color: #ffffff;
   --border: #ddd;
   --sidebar-bg-color: #dbdbdb;
+  --btn-hover: rgb(156, 156, 156);
 }
 
 :root[data-theme="theme-dark"] {
@@ -19,4 +20,5 @@ $scrollbar-border-radius: 8px;
   --component-bg-color: #22343c;
   --border: #17252c;
   --sidebar-bg-color: #243944;
+  --btn-hover: #3f6174;
 }

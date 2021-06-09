@@ -33,3 +33,44 @@
   font-size: 12px;
   padding: 10px 10px 2px;
 }
+
+.btn {
+  &.addModel {
+    position: relative;
+    border: none;
+    outline: none;
+    height: 25px;
+    width: 25px;
+    margin-top: 3px;
+    margin-left: 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-weight: bold;
+    background-color: var(--bg-color);
+    padding-right: 20px;
+
+    &:hover {
+      background-color: rgb(187, 187, 187);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 10px;
+      left: 8px;
+      top: 12px;
+      background-color: rgb(68, 68, 68);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 10px;
+      width: 2px;
+      left: 12px;
+      top: 8px;
+      background-color: rgb(68, 68, 68);
+    }
+  }
+}

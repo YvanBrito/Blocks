@@ -1,6 +1,7 @@
 <template>
   <div
-    @click.prevent="selectTab"
+    @click.left.prevent="selectTab"
+    @click.middle.prevent="closeDataModel(index)"
     class="tab"
     :class="{ active: index === activeDataModelIndex }"
   >
@@ -38,6 +39,7 @@ export default {
     ...mapMutations(["changeActiveDataModel"]),
     ...mapActions(["closeDataModel"]),
     selectTab(e) {
+      console.log(e.button);
       if (e.target.classList.contains("tab"))
         this.changeActiveDataModel(this.index);
     },
