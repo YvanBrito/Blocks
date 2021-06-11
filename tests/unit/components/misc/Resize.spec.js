@@ -1,4 +1,4 @@
-import Resize from "@/components/misc/Resize.vue";
+import Resize from "@/components/misc/Resize";
 
 describe("Resize.vue", () => {
   it("receives a string as dir prop", () => {
