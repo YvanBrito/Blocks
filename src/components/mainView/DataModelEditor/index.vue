@@ -16,8 +16,8 @@
 <script>
 import { mapGetters, mapMutations } from "vuex";
 
-import Table from "./Table.vue";
-import Tab from "./Tab.vue";
+import Table from "./Table";
+import Tab from "./Tab";
 
 export default {
   name: "DataModelEditor",
@@ -39,3 +39,5 @@ export default {
   },
 };
 </script>
+
+<style src="./style.scss" lang="scss" scoped />

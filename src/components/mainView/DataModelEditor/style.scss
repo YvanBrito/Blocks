@@ -1,37 +1,19 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@import '~@/assets/scss/utilities/mixins';
+@import '~@/assets/scss/utilities/variables';
+
+.middle {
+  @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
+  overflow-x: auto;
   width: 100%;
-
-  &>div {
-    overflow-y: auto;
-  }
-
-  .top {
-    display: flex;
-    justify-content: space-between;
-    height: 70vh;
-    
-    .middle {
-      @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
-      overflow-x: auto;
-      width: 100%;
-      background-color: var(--bg-color);
-      border: 1px solid var(--border);
-    }
-  }
-
-  .bottom {
-    @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
-    height: 30vh;
-    background-color: var(--bg-color);
-  }
+  background-color: var(--bg-color);
+  border: 1px solid var(--border);
 }
 
-.sidebarTitle {
-  font-size: 12px;
-  padding: 10px 10px 2px;
+.tabs {
+  @include scrollbars($scrollbar-width, $scrollbar-thumb, $scrollbar-track, $scrollbar-border-radius);
+  display: flex;
+  overflow-x: auto;
+  margin-right: 15px;
 }
 
 .btn {

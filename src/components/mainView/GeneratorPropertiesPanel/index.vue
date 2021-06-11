@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import Resize from "../misc/Resize";
+import Resize from "@/components/misc/Resize";
 export default {
   name: "GeneratorPropertiesPanel",
   components: { Resize },
@@ -96,3 +96,5 @@ export default {
   },
 };
 </script>
+
+<style src="./style.scss" lang="scss" scoped />
